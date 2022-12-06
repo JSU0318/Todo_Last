@@ -12,12 +12,12 @@ const data = [
   { id: 6, todo: "HTTP 프로토콜 배우기" },
 ];
 
-function Work() {
+function Lists() {
   const param = useParams();
 
-  const work = data.find((work) => work.id === parseInt(param.id));
+  const todolist = data.find((todolist) => todolist.id === parseInt(param.id));
 
-  return <div>{work.todo}</div>;
+  return <div>{todolist.todo}</div>;
 }
 
-export default Work;
+export default Lists;

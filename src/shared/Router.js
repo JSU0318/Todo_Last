@@ -1,11 +1,9 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "../pages/Home";
-import About from "../pages/About";
-import Contact from "../pages/Contact";
-import Works from "../pages/Works";
-import Layout from "./Layout";
-import Work from "../pages/Work";
+import Layout from "../components/layout/Layout";
+import Lists from "../pages/Lists";
+import Todolist from "../pages/TodoList";
 
 const Router = () => {
   return (
@@ -20,10 +18,8 @@ const Router = () => {
 						element는 해당 주소로 이동했을 때 보여주고자 하는 컴포넌트를 넣어줍니다.
 				 */}
           <Route path="/" element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="works" element={<Works />} />
-          <Route path="works/:id" element={<Work />} />
+          <Route path="todolist" element={<Todolist />} />
+          <Route path="todolist/:id" element={<Lists />} />
         </Routes>
       </Layout>
     </BrowserRouter>

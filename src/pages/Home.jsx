@@ -7,10 +7,10 @@ const Home = () => {
   return (
     <button
       onClick={() => {
-        navigate("/works");
+        navigate("/todolist");
       }}
     >
-      works로 이동
+      TodoList로 이동
     </button>
   );
 };
