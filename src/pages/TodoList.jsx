@@ -93,18 +93,3 @@ function Todolist() {
 }
 
 export default Todolist;
-
-/* <div>
-      {data.map((todolist) => {
-        return (
-          <div key={todolist.id}>
-            <div>할일: {todolist.id}</div>
-            <Link to={`/todolist/${todolist.id}`}>
-              <span style={{ cursor: "pointer" }}>
-                ➡️ Go to: {todolist.todo}
-              </span>
-            </Link>
-          </div>
-        );
-      })}
-    </div> */
