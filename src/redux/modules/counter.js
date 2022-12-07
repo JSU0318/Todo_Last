@@ -1,9 +1,12 @@
 // src/redux/modules/counter.js
 
+// import Todolist from "../../pages/TodoList";
+
 //Action value
 const ADD_BUTTON = "ADD_BUTTON";
 const DELETE_BUTTON = "DELETE_BUTTON";
 const CHANGE_BUTTON = "CHANGE_BUTTON";
+//const GET_TODO_BY_ID = "GET_TODO_BY_ID";
 //Action Creator
 
 export const addButton = (payload) => {
@@ -26,6 +29,12 @@ export const changeButton = (payload) => {
   };
 };
 
+// export const getTodoByID = (payload) => {
+//   return {
+//     type: GET_TODO_BY_ID,
+//     payload,
+//   };
+// };
 // Initial State
 
 const initialState = {
@@ -64,6 +73,11 @@ const counter = (state = initialState, action) => {
         ),
       };
     }
+    // case GET_TODO_BY_ID: {
+    //   return {
+    //     users: state.user.filter((users) => users.id === action.payload),
+    //   };
+    // }
     default:
       return state;
   }
