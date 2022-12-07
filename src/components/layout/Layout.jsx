@@ -1,7 +1,7 @@
 // src/shared/Layout.js
 
 import React from "react";
-
+import { Link } from "react-router-dom";
 const HeaderStyles = {
   width: "100%",
   background: "black",
@@ -26,15 +26,15 @@ const FooterStyles = {
 const layoutStyles = {
   display: "flex",
   flexDirection: "column",
-  justifyContent: "center",
-  alignItems: "center",
+  //justifyContent: "center",
+  //alignItems: "center",
   minHeight: "90vh",
 };
 
 function Header() {
   return (
     <div style={{ ...HeaderStyles }}>
-      <span>Sparta Coding Club - Let's learn React</span>
+      <Link to={`/`}>Home</Link>
     </div>
   );
 }
@@ -42,7 +42,7 @@ function Header() {
 function Footer() {
   return (
     <div style={{ ...FooterStyles }}>
-      <span>copyright @SCC</span>
+      <span>copyright @JSU0318</span>
     </div>
   );
 }

@@ -6,6 +6,7 @@ const Home = () => {
 
   return (
     <button
+      className
       onClick={() => {
         navigate("/todolist");
       }}

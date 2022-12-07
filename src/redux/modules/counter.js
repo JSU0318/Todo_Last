@@ -44,17 +44,24 @@ const counter = (state = initialState, action) => {
   switch (action.type) {
     case ADD_BUTTON: {
       return {
-        number: state.number + action.payload,
+        users: [...state.users, action.payload],
       };
     }
     case DELETE_BUTTON: {
       return {
-        number: state.number - action.payload,
+        users: state.users.filter((users) => users.id !== action.payload),
       };
     }
     case CHANGE_BUTTON: {
+      // if (payload.user.done === true) {
+      //   payload.user.done = false;
+      // } else {
+      //   payload.user.done = true;
+      // }
       return {
-        number: state.number - action.payload,
+        users: state.users.map((users) =>
+          users.id === action.payload ? { ...users, done: !users.done } : users
+        ),
       };
     }
     default:

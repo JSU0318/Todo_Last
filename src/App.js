@@ -1,8 +1,8 @@
 // src/App.js
 
 import React from "react";
-import { Link } from "react-router-dom";
 import Router from "./shared/Router";
+import "./index.css";
 
 const App = () => {
   return <Router />;

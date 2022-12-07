@@ -1,9 +1,12 @@
 import CustomButtonDelete from "../custombutton/CustomButtonDelete";
 import CustomButtonComplete from "../custombutton/CustomButtonComplete";
+import { Link } from "react-router-dom";
 
 function User(props) {
   return (
     <li className="square-style">
+      <Link to={`/todolist/${props.user.id}`}>상세보기</Link>
+      <br></br>
       <strong>{props.user.title}</strong>
       <p>{props.user.contents}</p>
       <div className="gp">
@@ -20,12 +23,7 @@ function User(props) {
           color="white"
           gap="50px"
           onClick={() => {
-            props.handleChange(props.user.done);
-            if (props.user.done === true) {
-              props.user.done = false;
-            } else {
-              props.user.done = true;
-            }
+            props.handleChange(props.user.id);
           }}
         >
           {props.user.done === true ? "완료" : "취소"}

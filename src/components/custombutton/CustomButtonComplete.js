@@ -4,7 +4,7 @@ function CustomButtonComplete(props) {
     return (
       <button
         style={{
-          width: "45%",
+          width: "100px",
           height: "40px",
           backgroundColor: color,
           color: "black",
