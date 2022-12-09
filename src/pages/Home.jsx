@@ -9,9 +9,9 @@ const Home = () => {
       className
       onClick={() => {
         navigate("/todolist");
-      }}
+      }} 
     >
-      TodoList로 이동
+      TodoList로 이동하기
     </button>
   );
 };

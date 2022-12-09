@@ -1,26 +1,28 @@
-import React, { useEffect } from "react";
+//import React, { useEffect } from "react";
 import styled from "styled-components";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import { addButton } from "../redux/modules/counter.js";
+
+//import { getTodoByID } from "../redux/modules/counter.js";
 
 const Detail = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const user = useSelector((state) => state.counter.users);
   const navigate = useNavigate();
+  const param = useParams();
+  // const { id } = useParams();
 
-  const { id } = useParams();
-
-  useEffect(() => {
-    dispatch(addButton(id));
-  }, [dispatch, id]);
+  const getid = user.find((user) => user.id === parseInt(param.id));
+  // useEffect(() => {
+  //   dispatch(addButton(user));
+  // }, [dispatch, user]);
 
   return (
     <StContainer>
       <StDialog>
         <div>
           <StDialogHeader>
-            <div>ID :{user.id}</div>
+            <div>ID : {getid.id} </div>
             <StButton
               borderColor="#ddd"
               onClick={() => {
@@ -30,8 +32,8 @@ const Detail = () => {
               이전으로
             </StButton>
           </StDialogHeader>
-          <StTitle>{user.title}</StTitle>
-          <StBody>{user.body}</StBody>
+          <StTitle>{getid.title}</StTitle>
+          <StBody>{getid.contents}</StBody>
         </div>
       </StDialog>
     </StContainer>
@@ -39,7 +41,7 @@ const Detail = () => {
 };
 
 const StContainer = styled.div`
-  border: 2px solid #eee;
+  border: 5px solid #eee;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -50,7 +52,7 @@ const StContainer = styled.div`
 const StDialog = styled.div`
   width: 600px;
   height: 400px;
-  border: 1px solid #eee;
+  border: 5px solid #eee;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
